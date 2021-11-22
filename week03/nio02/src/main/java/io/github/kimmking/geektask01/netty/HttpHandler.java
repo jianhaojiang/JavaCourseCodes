@@ -1,13 +1,4 @@
-#### Java 代码
-
-> 完整代码见nio2工程的geektask01
->
-> ![image-20211123004500298](https://cdn.jsdelivr.net/gh/jianhaojiang/PicGoBed/img/image-20211123004500298.png)
-
-只需改动 HttpHandler.java
-
-```java
-package com.jjh.netty;
+package io.github.kimmking.geektask01.netty;
 
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
@@ -125,15 +116,3 @@ public class HttpHandler extends ChannelInboundHandlerAdapter {
 
 
 }
-
-```
-
-#### 执行结果
-
-**url 包含 /test 路径，请求 http://localhost:8801/**
-
-![image-20211118002034121](https://cdn.jsdelivr.net/gh/jianhaojiang/PicGoBed/img/image-20211118002034121.png)
-
-**url 不包含 /test 路径, 请求 http://localhost:8802/**
-
-![image-20211118002117976](https://cdn.jsdelivr.net/gh/jianhaojiang/PicGoBed/img/image-20211118002117976.png)
