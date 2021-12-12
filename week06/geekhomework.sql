@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2021-12-12 23:12:44
+Date: 2021-12-12 23:58:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,6 +24,8 @@ CREATE TABLE ` t_order_commodity_raletion` (
   `order_guid` varchar(50) NOT NULL COMMENT '订单guid',
   `commodity_guid` varchar(50) NOT NULL COMMENT '商品guid',
   `buy_number` int(11) NOT NULL COMMENT '购买数量',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '数据更新时间',
   PRIMARY KEY (`row_guid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='订单-商品关联表';
 
@@ -36,10 +38,10 @@ CREATE TABLE `t_commodity` (
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '数据更新时间',
   `is_enable` int(11) unsigned DEFAULT '0' COMMENT '是否启用：1启用 0禁用',
-  `commodity_name` varchar(50) DEFAULT NULL COMMENT '商品名称',
-  `commodity_price` decimal(10,0) DEFAULT NULL COMMENT '商品价格',
+  `commodity_name` varchar(50) NOT NULL COMMENT '商品名称',
+  `commodity_price` decimal(10,2) NOT NULL COMMENT '商品价格',
   `commodity_descript` varchar(200) DEFAULT NULL COMMENT '商品简介',
-  `commodity_stock` bigint(20) DEFAULT NULL COMMENT '商品存量',
+  `commodity_stock` bigint(20) NOT NULL COMMENT '商品存量',
   PRIMARY KEY (`commodity_guid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='商品表';
 
@@ -52,7 +54,7 @@ CREATE TABLE `t_order` (
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '数据更新时间',
   `is_delete` int(11) DEFAULT '0' COMMENT '是否删除：1删除',
-  `user_guid` varchar(50) DEFAULT NULL COMMENT '关联的用户guid',
+  `user_guid` varchar(50) NOT NULL COMMENT '关联的用户guid',
   PRIMARY KEY (`order_guid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='订单表';
 
@@ -71,6 +73,6 @@ CREATE TABLE `t_user` (
   `user_type` varchar(50) DEFAULT NULL COMMENT '用户类型',
   `sex` varchar(50) DEFAULT NULL COMMENT '性别',
   `phone` varchar(50) DEFAULT NULL COMMENT '联系电话',
-  `address` varchar(500) NOT NULL COMMENT '收货地址',
+  `address` varchar(500) DEFAULT NULL COMMENT '收货地址',
   PRIMARY KEY (`user_guid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
