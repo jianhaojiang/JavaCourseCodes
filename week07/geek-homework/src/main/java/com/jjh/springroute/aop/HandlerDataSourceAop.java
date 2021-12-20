@@ -1,6 +1,8 @@
-package com.jjh.springroute;
+package com.jjh.springroute.aop;
 
 
+import com.jjh.springroute.annotaction.DynamicSwitchDataSource;
+import com.jjh.springroute.datasource.HandlerDataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -26,8 +28,8 @@ import java.lang.reflect.Method;
 public class HandlerDataSourceAop {
     //@within在类上设置
     //@annotation在方法上进行设置
-    @Pointcut("@within(com.jjh.springroute.DynamicSwitchDataSource)||" +
-            "@annotation(com.jjh.springroute.DynamicSwitchDataSource)")
+    @Pointcut("@within(com.jjh.springroute.annotaction.DynamicSwitchDataSource)||" +
+            "@annotation(com.jjh.springroute.annotaction.DynamicSwitchDataSource)")
     public void pointcut() {
     }
 

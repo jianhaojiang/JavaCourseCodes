@@ -1,9 +1,8 @@
 package com.jjh.springroute.service;
 
-import com.jjh.springroute.DynamicRoutingDataSource;
-import com.jjh.springroute.DynamicSwitchDataSource;
+import com.jjh.springroute.datasource.DynamicRoutingDataSource;
+import com.jjh.springroute.annotaction.DynamicSwitchDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.sql.Connection;

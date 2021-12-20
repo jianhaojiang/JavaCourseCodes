@@ -1,9 +1,6 @@
-package com.jjh.springroute;
+package com.jjh.springroute.datasource;
 
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
-
-import javax.sql.DataSource;
-import java.util.Map;
 
 /**
  * @program: geek-homework
