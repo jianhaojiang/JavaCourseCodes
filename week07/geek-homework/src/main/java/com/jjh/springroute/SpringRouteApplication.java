@@ -11,9 +11,6 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 public class SpringRouteApplication {
 
-    /**
-     * 测试 starter 启动自动配置的bean
-     */
     @Autowired
     IUserService userService;
 
