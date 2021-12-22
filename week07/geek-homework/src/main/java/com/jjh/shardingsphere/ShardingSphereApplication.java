@@ -1,20 +1,23 @@
-package com.jjh.springroute;
+package com.jjh.shardingsphere;
 
-import com.jjh.springroute.service.IUserService;
+
+import com.jjh.shardingsphere.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication
-public class SpringRouteApplication {
+import javax.annotation.Resource;
 
-    @Autowired
+@SpringBootApplication
+public class ShardingSphereApplication {
+
+    @Resource
     IUserService userService;
 
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringRouteApplication.class, args);
+        SpringApplication.run(ShardingSphereApplication.class, args);
     }
 
     @Bean
